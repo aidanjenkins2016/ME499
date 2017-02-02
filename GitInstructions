@@ -1,6 +1,7 @@
 Where to start:
-1) go to repo directory on computer
-2) 'git init'
+1) git clone 'enter url'
+2) go to repo directory on computer
+3) 'git init'
 
 
 To update local files
