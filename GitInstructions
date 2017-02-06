@@ -1,0 +1,14 @@
+Where to start:
+1) go to repo directory on computer
+2) 'git init'
+
+
+To update local files
+'git pull'
+
+To update Master
+1) 'git add -A' adds all files to repo
+2) 'git commit -m 'enter commit details'
+3) Make sure to enter commit details
+4) 'git push --all' sends all files back to master
+5) Sign into Github
