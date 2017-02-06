@@ -2,7 +2,7 @@ import cv2
 import numpy
 from matplotlib import pyplot as plt
 import io
-from picamera import PiCamera
+#from picamera import PiCamera
 
 #Create a memory stream so photos doesn't need to be saved in a file
 #stream = io.BytesIO()
@@ -12,16 +12,24 @@ from picamera import PiCamera
 
 #camera = PiCamera()
 #camera.resolution = (320, 240)
-c#amera.capture(stream, format='jpeg')
+#camera.capture(stream, format='jpeg')
 
 #Convert the picture into a numpy array
 #buff = numpy.fromstring(stream.getvalue(), dtype=numpy.uint8)
 
 #Now creates an OpenCV image
+width=640
+height=480
 img = cv2.imread('Hallway.jpg', 1)
-cv2.imshow("original", image)
+r = float(width) / img.shape[1]
+dim = (width, int(img.shape[0]*r))
+resized = cv2.resize(img, dim, interpolation = cv2.INTER_AREA)
+
+#cv2.imshow("original", img)
+cv2.imshow("resized", resized)
 cv2.waitKey(0)
-print image.shape
+#print img.shape
+print resized.shape
 
 ##resized_img=cv2.resize(img, 
 ##
