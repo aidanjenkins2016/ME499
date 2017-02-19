@@ -13,3 +13,8 @@ To update Master
 3) Make sure to enter commit details
 4) 'git push --all' sends all files back to master
 5) Sign into Github
+
+
+Connect over SSH:
+
+ssh pi@192.168.1.139
