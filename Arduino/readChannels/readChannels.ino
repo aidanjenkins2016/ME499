@@ -122,7 +122,7 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(channel1in), readChannel1, CHANGE); //assign interrupt to pin
   attachInterrupt(digitalPinToInterrupt(channel2in), readChannel2, CHANGE); //assign interrupt to pin
   attachInterrupt(digitalPinToInterrupt(channel3in), readChannel3, CHANGE); //assign interrupt to pin
-  Serial.begin(115200); //serial communication
+  Serial.begin(9600); //serial communication
 
 }
 
