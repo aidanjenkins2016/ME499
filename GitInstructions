@@ -18,3 +18,16 @@ To update Master
 Connect over SSH:
 
 ssh pi@192.168.1.139
+
+
+Extracting tar files
+tar -xvf filename.tar.gz ##file ending may be different
+
+Arduino
+-do not sudo apt-get arduino it will install a very old version
+-download .tar from arduino website and extract like above
+
+Teensyduino
+-follow instructions for linux
+-when adding rules make sure you are in the 
+same directory as the rules file and it does not have .txt at the end
