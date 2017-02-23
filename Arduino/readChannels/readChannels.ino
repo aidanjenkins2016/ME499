@@ -2,13 +2,16 @@
 #include <Servo.h>
 
 Servo channel1out, channel2out, channel3out;
-
+const int ledPin = 13;
+bool Serial_print = HIGH ;
 volatile int autonomous_flag=0;// 0==human, 1==autonomous
 volatile unsigned long timer_start1, timer_start2, timer_start3;
 volatile int pulse_time1, pulse_time2, pulse_time3;
 volatile int old_interrupt_time1, old_interrupt_time2, old_interrupt_time3;
-int channel1in = 21, channel2in=22 , channel3in=23 ; //input pin
-int channel1out_pin = 2, channel2out_pin = 3;
+
+//Pins
+int channel1in = 10, channel2in=9 , channel3in=23 ; //input pin
+int channel1out_pin = 16, channel2out_pin = 17;
 int steering_center=1514, throttle_center=1498; //figure out a way to read this in
 
 
@@ -104,7 +107,8 @@ void readChannel3() {
 
 void setup() {
   // put your setup code here, to run once:
-  
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin, HIGH); 
   //initialize timers
   timer_start1=0;timer_start2=0;timer_start3=0;
   
@@ -135,9 +139,11 @@ if(autonomous_flag==1)
   //look like 2 or 3 points ahead
   //create vector for point to point, 
       //check current pos often
+      
       //PID steering      
 }
 
+if(Serial_print){
 //print current I/O pulsewidths
 Serial.print(pulse_time1);
 Serial.print(" | ");
@@ -146,5 +152,6 @@ Serial.print(" | ");
 Serial.println(pulse_time3);
 
 delay(1000);
+}
 
 }
